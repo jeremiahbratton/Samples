@@ -1,0 +1,30 @@
+{
+    "name": "jb/explore-case-studies",
+    "title": "Case Studies",
+    "description": "Visual link list for case studies, uses glider.js to provide a carousel style navigation",
+    "style": ["glider-js-style","block-style-jb-case-studies"],
+    "viewScript": ["glider-js", "block-script-jb-case-studies"],
+    "category": "formatting",
+    "icon": "carrot",
+    "apiVersion": 2,
+    "keywords": ["jb", "case study", "partner"],
+    "acf": {
+        "mode": "preview",
+	    "renderTemplate": "render.php"
+    },
+    "styles": [],
+    "supports": {
+        "align": false,
+        "anchor": false,
+        "alignContent": false,
+        "color": {
+            "text": true,
+            "background": true,
+            "link": false
+        },
+        "alignText": false,
+        "fullHeight": false
+    },
+    "attributes": {
+    }
+}

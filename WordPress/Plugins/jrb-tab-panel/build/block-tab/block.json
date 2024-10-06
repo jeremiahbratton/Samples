@@ -1,0 +1,38 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "jeremiahbratton/tab-panel-tab",
+  "version": "0.1.0",
+  "title": "Tab",
+  "category": "widgets",
+  "icon": "smiley",
+  "description": "Individual tab block for tabs",
+  "example": {},
+  "supports": {
+    "html": false,
+    "interactivity": true
+  },
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "iconid": {
+      "type": "string"
+    },
+    "tabid": {
+      "type": "string"
+    },
+    "defaultTab": {
+      "type": "boolean",
+      "default": false
+    },
+    "tabAnchor": {
+      "type": "string"
+    }
+  },
+  "textdomain": "jrb-tab-panel",
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "style": "file:./style-index.css",
+  "viewScript": "file:./view.js"
+}

@@ -1,0 +1,116 @@
+/**
+ * The following styles get applied both on the front of your site
+ * and in the editor.
+ *
+ * Replace them with your own styles or remove the file completely.
+ */
+
+.jb-accordion {
+	width: 100%;
+	position: relative;
+	border-bottom: 1px solid #e5e5e5;
+	position: relative;
+
+	@media screen and (min-width: 48em) {
+		border-bottom: 0;
+	}
+
+	&__content {
+		height: auto;
+		overflow: hidden;
+		max-height: 100vh;
+		transition: max-height 1s;
+
+		@media screen and (min-width: 48em) {
+			max-height: auto;
+		}
+
+		&.is-collapsed {
+			max-height: 0;
+		}
+	}
+
+	&__header {
+		display: none;
+		visibility: hidden;
+
+		@media screen and (min-width: 48em) {
+			display: block;
+			visibility: visible;
+		}
+	}
+
+	&__toggle,
+	button {
+		background-color: transparent;
+		padding: 0;
+		border: none;
+		color: inherit;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		width: 100%;
+		padding-bottom: 1rem;
+		visibility: visible;
+
+		> * {
+			margin-bottom: 0;
+		}
+
+		&.is-expanded {
+			svg {
+				transform: rotate(180deg);
+			}
+		}
+
+		@media screen and (min-width: 48em) {
+			display: none;
+			visibility: hidden;
+		}
+	}
+
+	&__icon {
+		width: 20px;
+		height: auto;
+		z-index: -1;
+		transition: all 0.5s ease;
+
+		@media screen and (min-width: 48em) {
+			display: none;
+		}
+	}
+}
+
+//disabling if JS isn't enabled
+.no-js .jb-accordion__content.is-collapsed {
+	max-height: auto;
+}
+
+.animateIn {
+	animation: accordionIn 0.45s normal ease-in-out both 1;
+}
+.animateOut {
+	animation: accordionOut 0.45s alternate ease-in-out both 1;
+}
+@keyframes accordionIn {
+	0% {
+		opacity: 0;
+		transform: scale(0.9) rotateX(-60deg);
+		transform-origin: 50% 0;
+	}
+	100% {
+		opacity: 1;
+		transform: scale(1);
+	}
+}
+
+@keyframes accordionOut {
+	0% {
+		opacity: 1;
+		transform: scale(1);
+	}
+	100% {
+		opacity: 0;
+		transform: scale(0.9) rotateX(-60deg);
+	}
+}

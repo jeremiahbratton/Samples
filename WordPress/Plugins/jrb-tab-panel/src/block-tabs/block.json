@@ -1,0 +1,41 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "jeremiahbratton/tab-panel",
+	"version": "0.1.0",
+	"title": "Tab Pabel",
+	"category": "widgets",
+	"icon": "smiley",
+	"description": "Tab panel block",
+	"example": {},
+	"supports": {
+		"html": false,
+		"interactivity": true,
+		"align": ["wide"],
+		"anchor": true,
+		"alignWide": true,
+		"spacing": {
+			"margin": true, 
+			"padding": true
+		}
+	},
+	"attributes": {
+		"tabs": {
+			"type": "array",
+			"default": []
+		},
+		"tabAlignment": {
+			"type": "string",
+			"default": "left"
+		},
+		"align": {
+			"type": "string",
+			"default": "wide"
+		}
+	},
+	"textdomain": "jrb-tab-panel",
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css",
+	"style": "file:./style-index.css",
+	"viewScript": "file:./view.js"
+}

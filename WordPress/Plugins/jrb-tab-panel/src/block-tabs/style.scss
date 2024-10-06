@@ -1,0 +1,277 @@
+/**
+ * The following styles get applied both on the front of your site
+ * and in the editor.
+ *
+ * Replace them with your own styles or remove the file completely.
+ */
+
+//Tabbed Content
+.block-tabbed-content__tab__title {
+	display: none;
+}
+
+.block-tabbed-content__tabs {
+	display: none;
+	margin-bottom: 32px;
+	visibility: hidden;
+
+	@media screen and (max-width : 600px) {
+		display: flex;
+		margin-bottom: 32px;
+		visibility: visible;
+	}
+}
+
+.block-tabbed-content__tabs.init {
+
+	.block-tabbed-content__tab:first-of-type,
+	&[data-has-defaults=false] .block-tabbed-content__tab:first-of-type {
+		background-color: #a8a8a8;
+		border-top-left-radius: 20px;
+		border-top-right-radius: 20px;
+		color: #000;
+
+		img {
+			filter: brightness(0) invert(1);
+		}
+
+		&:hover,
+		&:focus {
+			color: #000;
+
+			img {
+				filter: brightness(0) invert(1);
+			}
+		}
+	}
+
+	/**
+	Handling Default Tab Styles
+	 */
+	.block-tabbed-content__tab[data-default=true] {
+		background-color: #a8a8a8;
+		border-top-left-radius: 20px;
+		border-top-right-radius: 20px;
+		color: #000;
+
+		img {
+			filter: brightness(0) invert(1);
+		}
+
+		&:hover,
+		&:focus {
+			color: #000;
+
+			img {
+				filter: brightness(0) invert(1);
+			}
+		}
+	}
+
+	.block-tabbed-content__tab[data-default=false] {
+		border: 2px solid #ccc;
+		background-color: #eee;
+		color: unset;
+
+		img {
+			filter: hue-rotate(180deg) contrast(100%) brightness(0) grayscale(100%);
+		}
+
+		&:hover,
+		&:focus {
+			color: #fff;
+			background-color: #333;
+
+			img {
+				filter: brightness(0) invert(1);
+			}
+		}
+	}
+}
+
+.block-tabbed-content__tabs.init--dirty {
+	@media screen and (max-width : 600px) {
+		.block-tabbed-content__tab:first-of-type {
+			border-bottom: #000;
+			color: #000;
+
+			img {
+				filter: hue-rotate(0) contrast(100%) brightness(100%) grayscale(0);
+			}
+
+			&:hover,
+			&:focus {
+				color: #000;
+
+				img {
+					filter: brightness(0) invert(1);
+				}
+			}
+		}
+	}
+}
+
+.block-tabbed-content__tab {
+	border:none;
+	display: flex;
+	align-items: center;
+	background-color: transparent;
+	font-weight: 700;
+	font-size: 1.25rem;
+	padding: 8px 24px 4px;
+	border: 2px solid #ccc;
+	background-color: #eee;
+	border-top-left-radius: 20px;
+	border-top-right-radius: 20px;
+
+	img {
+		filter: hue-rotate(180deg) contrast(100%) brightness(0) grayscale(100%);
+		width: 30px;
+		height: 30px;
+		margin: 0 10px 0 0;
+	}
+
+	&:hover,
+	&:focus {
+		background-color: #333;
+		border-top-left-radius: 20px;
+		border-top-right-radius: 20px;
+		color: #fff;
+
+		img {
+			filter: brightness(0) invert(1);
+		}
+	}
+
+	&.active {
+		background-color: #000;
+		border-top-left-radius: 20px;
+		border-top-right-radius: 20px;
+		color: #fff;
+
+		img {
+			filter: brightness(0) invert(1);
+		}
+
+		&:hover,
+		&:focus {
+			color: #fff;
+
+			img {
+				filter: brightness(0) invert(1);
+			}
+		}
+	}
+}
+
+.block-tabbed-content__tab-panels.init {
+
+	&[data-has-defaults=false] .block-tabbed-content__panel:first-of-type .block-tabbed-content__tab-content {
+		@media screen and (max-width : 600px) {
+			position: relative;
+			display: block;
+		}
+	}
+
+	.block-tabbed-content__panel:first-of-type .block-tabbed-content__tab-content {
+
+		position: relative;
+		display: block;
+	}
+
+	.block-tabbed-content__panel[data-default="false"] .block-tabbed-content__tab-content {
+		display: none;
+		position: absolute;
+	}
+
+	.block-tabbed-content__panel[data-default="true"] .block-tabbed-content__tab-content {
+		position: relative;
+		display: block;
+	}
+
+	.block-tabbed-content__panel:first-of-type .block-tabbed-content__panel__mobile-toggle .block-tabbed-content__panel__toggle .block-tabbed-content__panel__title {
+		color: #000;
+	}
+
+	.block-tabbed-content__panel:first-of-type .block-tabbed-content__panel__mobile-toggle .block-tabbed-content__panel__toggle .block-tabbed-content__panel__arrow {
+		transform: rotate(90deg);
+	}
+}
+
+.block-tabbed-content__panel {
+	display: block;
+	position: relative;
+	width: 100%;
+}
+
+.block-tabbed-content__tab-content {
+	display: none;
+	position: absolute;
+
+	&.active {
+		display: block;
+		position: relative;
+	}
+}
+
+/**
+Mobile State
+*/
+.block-tabbed-content__panel {
+
+	$mobile-tab-parent: &;
+
+	&__mobile-toggle {
+		display: block;
+		border-bottom: 1px solid #000;
+		margin-bottom: 1em;
+		visibility: visible;
+
+		@media screen and (max-width : 600px) {
+			display: none;
+			visibility: hidden;
+		}
+	}
+
+	&__toggle {
+		display: flex;
+		border: none;
+		background-color: transparent;
+		justify-content: flex-start;
+		align-items: flex-start;
+		width: 100%;
+		padding: 0.875em 4px;
+
+		&:hover,
+		&:focus {
+			#{$mobile-tab-parent}__title {
+				color: #000;
+			}
+		}
+
+		&.active {
+			#{$mobile-tab-parent}__arrow {
+				transform: rotate(90deg);
+			}
+		}
+	}
+
+	&__title {
+		flex-grow: 1;
+		text-align: left;
+		font-size: 1.25rem;
+		letter-spacing: -0.17px;
+		line-height: 24px;
+		margin-bottom: 0;
+	}
+
+	&__arrow {
+		height: 12px;
+		width: 12px;
+	}
+
+	&__icon {
+		filter: hue-rotate(180deg) contrast(100%) brightness(0) grayscale(100%);
+		margin-right: 0.75em;
+	}
+}
