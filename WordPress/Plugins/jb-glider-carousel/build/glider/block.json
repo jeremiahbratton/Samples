@@ -1,0 +1,89 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "jeremiahbratton/jb-glider-carousel",
+  "version": "0.1.0",
+  "title": "Glider Carousel",
+  "category": "widgets",
+  "icon": "smiley",
+  "description": "Carousel block that uses glider js to manage the carousel.",
+  "example": {},
+  "supports": {
+    "html": false,
+    "anchor": true,
+    "align": [
+      "wide",
+      "full"
+    ],
+    "alignWide": true,
+    "reusable": true,
+    "spacing": {
+      "margin": true,
+      "padding": true
+    }
+  },
+  "allowedBlocks": [
+    "core/pullquote",
+    "core/media-text",
+    "core/cover",
+    "core/image"
+  ],
+  "attributes": {
+    "slidesToShow": {
+      "type": "number",
+      "default": 1
+    },
+    "slidesToScroll": {
+      "type": "number",
+      "default": 1
+    },
+    "arrows": {
+      "type": "boolean",
+      "default": true
+    },
+    "dots": {
+      "type": "boolean",
+      "default": true
+    },
+    "buttonBackgroundColor": {
+      "type": "string",
+      "default": "#ccc"
+    },
+    "activeButtonBackgroundColor": {
+      "type": "string",
+      "default": "#888"
+    },
+    "hoverButtonBackgroundColor": {
+      "type": "string",
+      "default": "#666"
+    },
+    "buttonBorderColor": {
+      "type": "string",
+      "default": "#222"
+    },
+    "buttonTextColor": {
+      "type": "string",
+      "default": "#000"
+    },
+    "rewind": {
+      "type": "boolean",
+      "default": true
+    },
+    "draggable": {
+      "type": "boolean",
+      "default": true
+    },
+    "scrollLock": {
+      "type": "boolean",
+      "default": true
+    }
+  },
+  "textdomain": "jb-glider-carousel",
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "style": "file:./style-index.css",
+  "viewScript": [
+    "file:./dependency/glider.min.js",
+    "file:./view.js"
+  ]
+}
